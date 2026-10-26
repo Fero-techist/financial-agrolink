@@ -42,7 +42,7 @@ function ProfileIdentity() {
       </div>
 
       <div className="mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-        <h2 className="text-center text-2xl font-semibold tracking-[-0.04em] text-[#4b382b] sm:text-[2.2rem]">
+        <h2 className="text-center text-2xl font-semibold tracking-[-0.04em] text-[#4b382b] sm:text-[1.8rem]">
           Samuel Okonjo
         </h2>
         <span className="inline-flex items-center gap-1.5 rounded-full bg-[#e5eee6] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.06em] text-[#18392b]">
@@ -55,7 +55,7 @@ function ProfileIdentity() {
         </span>
       </div>
 
-      <p className="mt-2 text-lg font-medium text-[#66766d] sm:text-[1.8rem]">
+      <p className="mt-2 text-base font-medium text-[#66766d] sm:text-xl">
         ID: CAL-8842-FMR
       </p>
     </section>
@@ -209,7 +209,7 @@ export default function PersonalInformation() {
         </div>
         <h2
           id="profile-updated-heading"
-          className="mt-5 max-w-md text-3xl font-semibold leading-tight tracking-tight text-[#07512f] sm:text-[2.2rem]"
+          className="mt-5 max-w-md text-2xl font-semibold leading-tight tracking-tight text-[#07512f] sm:text-[2rem]"
         >
           Profile Updated Successfully
         </h2>

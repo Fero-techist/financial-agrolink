@@ -205,7 +205,7 @@ export default function Settings() {
           />
         </button>
 
-        <h1 className="flex-1 text-center text-[1.8rem] font-semibold tracking-tight text-[#0f412d] md:text-[2rem]">
+        <h1 className="flex-1 text-center text-2xl font-semibold tracking-tight text-[#0f412d] md:text-[2rem]">
           Settings
         </h1>
 
@@ -234,7 +234,7 @@ export default function Settings() {
         </div>
 
         <div className="mt-6 flex items-center gap-3">
-          <h2 className="text-[1.8rem] font-semibold tracking-[-0.04em] text-[#1a2d24] md:text-[2.05rem]">
+          <h2 className="text-2xl font-semibold tracking-[-0.04em] text-[#1a2d24] md:text-[2.05rem]">
             Samuel Okonjo
           </h2>
           <span className="inline-flex items-center gap-1 rounded-full bg-[#e5eee6] px-2.5 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-[#0d6f4d]">

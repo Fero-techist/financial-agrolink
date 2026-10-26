@@ -27,12 +27,12 @@ export default function ActionConfirmationModal({
       <div className="w-full max-w-[29rem]">
         <h2
           id="action-confirmation-title"
-          className="text-[2.2rem] font-semibold tracking-[-0.04em] text-[#0a422a] sm:text-[2.8rem]"
+          className="text-2xl font-semibold tracking-[-0.04em] text-[#0a422a] sm:text-[2.4rem]"
         >
           {title}
         </h2>
 
-        <p className="mt-5 text-[1.07rem] leading-[1.55] text-[#203c31] sm:text-[1.28rem]">
+        <p className="mt-5 text-base leading-[1.55] text-[#203c31] sm:text-lg">
           {description}
         </p>
 
@@ -40,7 +40,7 @@ export default function ActionConfirmationModal({
           <button
             type="button"
             onClick={onConfirm}
-            className={`flex min-h-[4.1rem] w-full items-center justify-center rounded-[0.75rem] px-6 text-[1.12rem] font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f] ${
+            className={`flex min-h-[4.1rem] w-full items-center justify-center rounded-[0.75rem] px-6 text-base font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f] ${
               isDanger
                 ? "bg-[#b02222] text-white shadow-[0_6px_12px_rgba(176,34,34,0.117)] hover:bg-[#9d1d1d]"
                 : "bg-[#0b5b43] text-white shadow-[0_6px_12px_rgba(11,91,67,0.104)] hover:bg-[#0a4e3a]"
@@ -52,7 +52,7 @@ export default function ActionConfirmationModal({
           <button
             type="button"
             onClick={onClose}
-            className="flex min-h-[4.1rem] w-full items-center justify-center rounded-[0.75rem] border border-[#1a372d] bg-white px-6 text-[1.12rem] font-semibold text-[#0a422a] transition hover:bg-[#f4f8f3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f]"
+            className="flex min-h-[4.1rem] w-full items-center justify-center rounded-[0.75rem] border border-[#1a372d] bg-white px-6 text-base font-semibold text-[#0a422a] transition hover:bg-[#f4f8f3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f]"
           >
             {cancelText}
           </button>

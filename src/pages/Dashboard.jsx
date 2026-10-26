@@ -52,7 +52,7 @@ function FundsSummary() {
           Total funds disbursed <span aria-hidden="true">·</span> 2026 year to
           date
         </p>
-        <p className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.1rem]">
+        <p className="mt-3 text-2xl font-semibold tracking-tight sm:text-4xl lg:text-[2.1rem]">
           $1,240,000
         </p>
         <p className="mt-2 text-sm text-white/65">
