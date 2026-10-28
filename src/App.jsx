@@ -4,6 +4,8 @@ import Dashboard from "./pages/Dashboard";
 import Programs from "./pages/Programs";
 import CreateOpportunity from "./pages/CreateOpportunity";
 import OpportunityDrafts from "./pages/OpportunityDrafts";
+import ProgramApplications from "./pages/ProgramApplications";
+import ApplicationReview from "./pages/ApplicationReview";
 import Farmers from "./pages/Farmers";
 import Settings from "./pages/Settings";
 import PersonalInformation from "./pages/PersonalInformation";
@@ -34,6 +36,14 @@ export default function AppRoutes() {
         <Route
           path="programs/drafts"
           element={<OpportunityDrafts />}
+        />
+        <Route
+          path="programs/:programId/applications"
+          element={<ProgramApplications />}
+        />
+        <Route
+          path="programs/:programId/applications/:applicationId"
+          element={<ApplicationReview />}
         />
         <Route
           path="farmers"

@@ -1,53 +1,8 @@
 import { useMemo, useState } from "react";
-import {
-  ArrowDownRight,
-  CalendarDays,
-  CirclePause,
-  Droplet,
-  Landmark,
-  Plus,
-  Search,
-  Users,
-} from "lucide-react";
+import { CalendarDays, Landmark, Plus, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import WelcomeHeader from "../components/WelcomeHeader";
-
-const programs = [
-  {
-    id: 1,
-    type: "Grant",
-    status: "Open",
-    organization: "Bank of Agriculture × FMARD",
-    organizationDescription: "Federal Agricultural Initiative",
-    title: "Smallholder Poultry Expansion Grant",
-    amount: "₦250,000",
-    details: [
-      { label: "100 Beneficiaries", icon: Users },
-      { label: "Poultry Farmers", icon: Droplet },
-    ],
-    description:
-      "Non-repayable grant for acquiring day-old chicks, high-protein feed, and battery.",
-    date: "15 Sep – 15 Dec 2026",
-  },
-  {
-    id: 2,
-    type: "Loan",
-    status: "Open",
-    organization: "Bank of Agriculture × FMARD",
-    organizationDescription: "Federal Agricultural Initiative",
-    title: "Commercial Crop Working Capital Loan",
-    amount: "₦250,000 – ₦1,000,000",
-    details: [
-      { label: "From 8% p.a.", icon: ArrowDownRight },
-      { label: "6 – 24 Month Tenure", icon: CalendarDays },
-      { label: "3 Month Grace Period", icon: CirclePause },
-    ],
-    description:
-      "Flexible seasonal financing for certified cocoa, maize, and cashew growers...",
-    estimate: "Estimated ₦45,200/mo on ₦1M (24mos)",
-    date: "15 Sep – 15 Dec 2026",
-  },
-];
+import { programs } from "../data/programs";
 
 const filters = ["All", "Grants", "Loans"];
 
@@ -55,25 +10,23 @@ function ProgramCard({ program }) {
   const isGrant = program.type === "Grant";
 
   return (
-    <article className="group flex h-full flex-col rounded-[12px] border border-[#e5ece4] bg-white p-5 shadow-[0_4px_9px_rgba(20,55,35,0.029)] transition duration-200 hover:-translate-y-0.5 hover:border-[#ccdfcb] hover:shadow-[0_8px_11px_rgba(20,55,35,0.058)] sm:p-6">
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-2 rounded-full bg-[#eaf5ec] px-3.5 py-1.5 text-xs font-semibold text-[#07512f]">
-          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-[#2b9b5c]" />
+    <article className="group flex h-full min-w-0 flex-col rounded-2xl border border-[#e5ece4] bg-white p-5 shadow-[0_4px_9px_rgba(20,55,35,0.029)] transition duration-200 hover:-translate-y-0.5 hover:border-[#ccdfcb] hover:shadow-[0_8px_11px_rgba(20,55,35,0.058)] sm:p-6">
+      <div className="mb-4">
+        <span className="inline-flex min-h-9 items-center rounded-lg bg-[#e8f4ea] px-4 py-2 text-sm font-medium text-[#07512f]">
           {program.status}
         </span>
-        <span className="text-xs font-medium text-[#87958c]">{program.date}</span>
       </div>
 
       <div className="flex items-center gap-3">
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eef4ea] text-[#287245]">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#eef4ea] text-[#287245]">
           <Landmark
             aria-hidden="true"
-            size={25}
+            size={23}
             strokeWidth={1.8}
           />
         </span>
         <div className="min-w-0">
-          <h2 className="text-sm font-semibold text-[#10291c] sm:text-base lg:text-sm">
+          <h2 className="text-sm font-semibold text-[#10291c]">
             {program.organization}
           </h2>
           <p className="mt-0.5 text-xs text-[#91a097]">
@@ -82,7 +35,7 @@ function ProgramCard({ program }) {
         </div>
       </div>
 
-      <div className="mt-5 flex items-center justify-between gap-3">
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <span
           className={`rounded-full px-4 py-1.5 text-xs font-semibold uppercase ${
             isGrant ? "bg-[#087642] text-white" : "bg-[#d1e7dd] text-[#07512f]"
@@ -91,18 +44,18 @@ function ProgramCard({ program }) {
           {program.type}
         </span>
         {isGrant && (
-          <p className="text-lg font-bold text-[#087642] sm:text-xl lg:text-lg">
+          <p className="text-lg font-bold text-[#087642] sm:text-xl">
             {program.amount}
           </p>
         )}
       </div>
 
-      <h3 className="mt-3 text-lg font-semibold leading-snug text-[#213c2d] sm:text-xl lg:text-lg">
+      <h3 className="mt-3 text-lg font-semibold leading-snug text-[#382417] sm:text-xl">
         {program.title}
       </h3>
 
       {!isGrant && (
-        <p className="mt-2 text-xl font-semibold tracking-tight text-[#087642] sm:text-2xl lg:text-xl">
+        <p className="mt-2 wrap-break-word text-xl font-semibold tracking-tight text-[#087642] sm:text-2xl">
           {program.amount}
         </p>
       )}
@@ -129,17 +82,37 @@ function ProgramCard({ program }) {
       </p>
 
       {program.estimate && (
-        <p className="mt-3 text-sm font-semibold text-[#4f5c53] lg:text-xs">
+        <p className="mt-3 text-xs font-semibold leading-5 text-[#4f5c53] sm:text-sm">
           {program.estimate}
         </p>
       )}
 
-      <button
-        type="button"
-        className="mt-auto min-h-11 w-full rounded-lg bg-[#006331] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#004f27] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f]"
-      >
-        View
-      </button>
+      <div className="mt-4 flex items-center gap-2 text-sm font-medium text-[#10291c]">
+        <CalendarDays
+          aria-hidden="true"
+          size={16}
+          className="shrink-0 text-[#287245]"
+        />
+        <span>{program.date}</span>
+      </div>
+
+      <div className="mt-5 flex gap-2">
+        <Link
+          to={`/programs/${program.id}/applications`}
+          className="min-h-12 min-w-0 flex-1 items-center text-center rounded-xl bg-[#006331] px-3 py-3 text-sm font-semibold text-white transition hover:bg-[#004f27] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f]"
+        >
+          View Application
+        </Link>
+
+        <Link to="/programs/create">
+          <button
+            type="button"
+            className="min-h-12 rounded-xl bg-[#f0f5ec] px-4 py-3 text-sm font-semibold text-[#10291c] transition hover:bg-[#e3eee2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f]"
+          >
+            Edit
+          </button>
+        </Link>
+      </div>
     </article>
   );
 }
@@ -166,45 +139,42 @@ export default function Programs() {
   }, [activeFilter, search]);
 
   return (
-    <div className="space-y-7 sm:space-y-8">
+    <div className="space-y-6 sm:space-y-7">
       <WelcomeHeader />
 
       <header className="space-y-2">
-        <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#819087]">
-          Funding
-        </p>
-        <h1 className="text-2xl font-semibold tracking-tight text-[#123e2b] sm:text-3xl">
-          Funding opportunities
+        <h1 className="text-2xl font-semibold tracking-tight text-[#07512f]">
+          Loan &amp; Grants Opportunities
         </h1>
-        <p className="max-w-2xl text-sm leading-6 text-[#718078] sm:text-base">
-          Explore grants and loans designed to help farmers invest, grow, and plan for the seasons ahead.
+        <p className="max-w-2xl text-base leading-6 text-[#718078]">
+          Discover funding opportunities to grow your farm and business.
         </p>
       </header>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <Link
           to="/programs/create"
-          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-[#041B0E] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#063f25] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f] sm:w-auto"
+          className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#07512f] px-5 py-3 text-base font-semibold text-white transition hover:bg-[#063f25] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f] sm:w-auto"
         >
-          Create an opportunity
+          Create New Opportunity
           <Plus
             aria-hidden="true"
-            size={18}
+            size={21}
             strokeWidth={2}
           />
         </Link>
 
         <Link
           to="/programs/drafts"
-          className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-[#F0F5EC] px-5 py-3 text-sm font-semibold text-[#041B0E] transition hover:bg-[#e3eee2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f] sm:w-auto"
+          className="inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-[#f0f5ec] px-5 py-3 text-sm font-semibold text-[#10291c] transition hover:bg-[#e3eee2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f] sm:w-auto"
         >
-          Saved drafts
+          View Draft
         </Link>
       </div>
 
       <section
         aria-label="Search and filter programs"
-        className="space-y-4"
+        className="space-y-3"
       >
         <label className="relative block">
           <Search
@@ -217,9 +187,9 @@ export default function Programs() {
             type="search"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
-            placeholder="Try a program name or organization"
+            placeholder="Search funding opportunities"
             aria-label="Search funding programs"
-            className="h-16 w-full rounded-xl border border-[#dedfdd] bg-white pl-12 pr-4 text-base text-[#10291c] outline-none placeholder:text-[#9aa49e] focus:border-[#07512f] focus:ring-2 focus:ring-[#07512f]/10 lg:h-12 lg:text-sm"
+            className="h-14 w-full rounded-xl border border-[#dedfdd] bg-white pl-12 pr-4 text-sm text-[#10291c] outline-none placeholder:text-[#9aa49e] focus:border-[#07512f] focus:ring-2 focus:ring-[#07512f]/10"
           />
         </label>
 
@@ -245,7 +215,7 @@ export default function Programs() {
                 role="tab"
                 aria-selected={activeFilter === filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`min-h-11 rounded-lg px-2 text-sm font-semibold transition sm:text-base lg:text-sm ${
+                className={`min-h-11 rounded-lg px-2 text-sm font-semibold transition ${
                   activeFilter === filter
                     ? "bg-white text-[#07512f] shadow-sm"
                     : "text-[#718078] hover:text-[#07512f]"
@@ -260,7 +230,7 @@ export default function Programs() {
 
       <section
         aria-label="Available funding programs"
-        className="grid items-stretch gap-5 lg:grid-cols-2 xl:gap-6"
+        className="grid min-w-0 grid-cols-1 items-stretch gap-4 lg:grid-cols-2 lg:gap-5"
       >
         {visiblePrograms.map((program) => (
           <ProgramCard
@@ -271,7 +241,8 @@ export default function Programs() {
 
         {visiblePrograms.length === 0 && (
           <div className="rounded-xl bg-white px-5 py-12 text-center text-sm text-[#718078] shadow-sm lg:col-span-2">
-            No opportunities match these filters. Try another search or choose a different funding type.
+            No opportunities match these filters. Try another search or choose a
+            different funding type.
           </div>
         )}
       </section>

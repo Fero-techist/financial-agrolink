@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
             size={23}
           />
         </button>
-        <h1 className="flex-1 text-center text-[1.8rem] font-semibold tracking-tight text-[#0a422a] md:text-[2rem]">
+        <h1 className="flex-1 text-center text-lg font-semibold tracking-tight text-[#0a422a] sm:text-xl">
           Privacy & Policy
         </h1>
         <div
@@ -86,25 +86,25 @@ export default function PrivacyPolicy() {
               </div>
 
               <div className="min-w-0 flex-1">
-                <h2 className="text-[1.05rem] font-bold leading-tight text-[#0a5d41] sm:text-[1.2rem]">
+                <h2 className="text-sm font-bold leading-tight text-[#0a5d41] sm:text-base">
                   {title}
                 </h2>
 
                 {title === "Data Collection" ? (
                   <>
-                    <p className="mt-3 text-[1.02rem] leading-[1.6] text-[#1e382f] sm:text-[1.08rem]">
+                    <p className="mt-3 text-sm leading-6 text-[#1e382f]">
                       {text}
                     </p>
 
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                      <div className="rounded-lg bg-[#e7efe8] px-4 py-3 text-sm font-medium text-[#1d312a] shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] sm:text-base">
+                      <div className="rounded-lg bg-[#e7efe8] px-4 py-3 text-xs font-medium text-[#1d312a] shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] sm:text-sm">
                         <span className="block text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#476257]">
                           Identity
                         </span>
                         <span className="mt-1 block">Name & Contacts</span>
                       </div>
 
-                      <div className="rounded-lg bg-[#e7efe8] px-4 py-3 text-sm font-medium text-[#1d312a] shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] sm:text-base">
+                      <div className="rounded-lg bg-[#e7efe8] px-4 py-3 text-xs font-medium text-[#1d312a] shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] sm:text-sm">
                         <span className="block text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#476257]">
                           Assets
                         </span>
@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
                   </>
                 ) : title === "Data Sharing" ? (
                   <>
-                    <p className="mt-3 text-[1.02rem] leading-[1.6] text-[#1e382f] sm:text-[1.08rem]">
+                    <p className="mt-3 text-sm leading-6 text-[#1e382f]">
                       {text}
                     </p>
 
@@ -128,7 +128,7 @@ export default function PrivacyPolicy() {
                     </div>
                   </>
                 ) : (
-                  <p className="mt-3 text-[1.02rem] leading-[1.6] text-[#1e382f] sm:text-[1.08rem]">
+                  <p className="mt-3 text-sm leading-6 text-[#1e382f]">
                     {text}
                   </p>
                 )}

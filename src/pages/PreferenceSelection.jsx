@@ -78,14 +78,14 @@ export default function PreferenceSelection({ preference }) {
         >
           <ArrowLeft aria-hidden="true" size={23} />
         </button>
-        <h1 className="flex-1 text-center text-2xl font-semibold tracking-tight text-[#07512f] sm:text-3xl">
+        <h1 className="flex-1 text-center text-xl font-semibold tracking-tight text-[#07512f]">
           {page.title}
         </h1>
         <div className="h-12 w-12 sm:h-14 sm:w-14" aria-hidden="true" />
       </header>
 
       <section className="mt-10 sm:mt-12">
-        <h2 className="mb-4 text-lg font-semibold text-[#7b8a81] sm:text-xl">
+        <h2 className="mb-4 text-base font-semibold text-[#7b8a81]">
           {page.heading}
         </h2>
         <p className="sr-only">{page.description}</p>
@@ -109,7 +109,7 @@ export default function PreferenceSelection({ preference }) {
                   checked={selected.preferences[preference] === option.value}
                   onChange={() => chooseOption(option.value)}
                 />
-                <span className="text-base font-medium text-[#19382a] sm:text-lg">
+                <span className="text-sm font-medium text-[#19382a]">
                   {option.label}
                 </span>
                 <span className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-[2px] border-[#e3eae4] transition after:h-2.5 after:w-2.5 after:rounded-full after:bg-white after:opacity-0 after:content-[''] peer-checked:border-[#07512f] peer-checked:bg-[#07512f] peer-checked:after:opacity-100 peer-focus-visible:ring-4 peer-focus-visible:ring-[#07512f]/20 sm:h-8 sm:w-8 sm:after:h-3 sm:after:w-3">

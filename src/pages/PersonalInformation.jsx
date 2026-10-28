@@ -42,7 +42,7 @@ function ProfileIdentity() {
       </div>
 
       <div className="mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-        <h2 className="text-center text-2xl font-semibold tracking-[-0.04em] text-[#4b382b] sm:text-[1.8rem]">
+        <h2 className="text-center text-xl font-semibold tracking-tight text-[#4b382b]">
           Samuel Okonjo
         </h2>
         <span className="inline-flex items-center gap-1.5 rounded-full bg-[#e5eee6] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.06em] text-[#18392b]">
@@ -55,7 +55,7 @@ function ProfileIdentity() {
         </span>
       </div>
 
-      <p className="mt-2 text-base font-medium text-[#66766d] sm:text-xl">
+      <p className="mt-2 text-sm font-medium text-[#66766d]">
         ID: CAL-8842-FMR
       </p>
     </section>
@@ -72,7 +72,7 @@ function DetailRow({ detail, onChange }) {
   return (
     <div className="flex min-h-24 items-center gap-4 border-b border-[#e2e9e3] px-5 py-5 last:border-b-0 sm:min-h-[7.7rem] sm:px-10 sm:py-6">
       <div className="min-w-0 flex-1">
-        <h3 className="text-base font-semibold text-[#142d23] sm:text-lg">
+        <h3 className="text-sm font-semibold text-[#142d23]">
           {detail.label}
         </h3>
         {isEditing ? (
@@ -83,7 +83,7 @@ function DetailRow({ detail, onChange }) {
               value={detail.value}
               onChange={(event) => handleChange(event.target.value)}
               onBlur={() => setIsEditing(false)}
-              className="mt-2 w-full max-w-md rounded-lg border border-[#cbd8cc] bg-white px-3 py-2 text-base text-[#66766d] outline-none focus:border-[#0b5b43] focus:ring-2 focus:ring-[#0b5b43]/20"
+              className="mt-2 w-full max-w-md rounded-lg border border-[#cbd8cc] bg-white px-3 py-2 text-sm text-[#66766d] outline-none focus:border-[#0b5b43] focus:ring-2 focus:ring-[#0b5b43]/20"
             >
               {detail.options.map((option) => (
                 <option
@@ -107,11 +107,11 @@ function DetailRow({ detail, onChange }) {
                   setIsEditing(false);
                 }
               }}
-              className="mt-2 w-full max-w-md rounded-lg border border-[#cbd8cc] bg-white px-3 py-2 text-base text-[#66766d] outline-none focus:border-[#0b5b43] focus:ring-2 focus:ring-[#0b5b43]/20"
+              className="mt-2 w-full max-w-md rounded-lg border border-[#cbd8cc] bg-white px-3 py-2 text-sm text-[#66766d] outline-none focus:border-[#0b5b43] focus:ring-2 focus:ring-[#0b5b43]/20"
             />
           )
         ) : (
-          <p className="mt-1 break-words text-base text-[#66766d] sm:mt-2 sm:text-[1.3rem]">
+          <p className="mt-1 break-words text-sm text-[#66766d] sm:mt-2">
             {detail.value}
           </p>
         )}
@@ -162,7 +162,7 @@ export default function PersonalInformation() {
           />
         </button>
 
-        <h1 className="flex-1 text-center text-xl font-semibold tracking-tight text-[#0f512f] sm:text-[2rem]">
+        <h1 className="flex-1 text-center text-xl font-semibold tracking-tight text-[#0f512f]">
           Personal Details
         </h1>
 
@@ -190,7 +190,7 @@ export default function PersonalInformation() {
       <button
         type="button"
         onClick={() => setIsSaved(true)}
-        className="mx-auto mt-9 flex min-h-14 w-[84%] max-w-[34rem] items-center justify-center rounded-lg bg-[#07512f] px-6 py-3 text-lg font-medium text-white shadow-[0_4px_8px_rgba(7,81,47,0.104)] transition hover:bg-[#063f25] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f] sm:mt-14 sm:min-h-[5.5rem] sm:text-[1.6rem]"
+        className="mx-auto mt-9 flex min-h-12 w-[84%] max-w-[34rem] items-center justify-center rounded-lg bg-[#07512f] px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_8px_rgba(7,81,47,0.104)] transition hover:bg-[#063f25] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f] sm:mt-12"
       >
         Save
       </button>
@@ -209,7 +209,7 @@ export default function PersonalInformation() {
         </div>
         <h2
           id="profile-updated-heading"
-          className="mt-5 max-w-md text-2xl font-semibold leading-tight tracking-tight text-[#07512f] sm:text-[2rem]"
+          className="mt-5 max-w-md text-xl font-semibold leading-tight tracking-tight text-[#07512f]"
         >
           Profile Updated Successfully
         </h2>

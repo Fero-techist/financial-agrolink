@@ -31,7 +31,7 @@ export default function ContactUs() {
           />
         </button>
 
-        <h1 className="flex-1 text-center text-[1.8rem] font-semibold tracking-tight text-[#0a422a] md:text-[2rem]">
+        <h1 className="flex-1 text-center text-lg font-semibold tracking-tight text-[#0a422a] sm:text-xl">
           Contact Support
         </h1>
 
@@ -41,7 +41,7 @@ export default function ContactUs() {
         />
       </header>
 
-      <p className="mt-8 max-w-[26rem] text-[1.08rem] leading-[1.45] text-[#1a3229] sm:text-[1.25rem] md:text-[1.35rem]">
+      <p className="mt-8 max-w-[26rem] text-sm leading-6 text-[#1a3229]">
         We’re here to help, reach out to us for more questions, support or
         feedback.
       </p>
@@ -63,7 +63,7 @@ export default function ContactUs() {
               />
             </div>
 
-            <div className="max-w-[88%] rounded-[0.875rem] bg-[#e7ece7] px-4 py-3 text-[0.92rem] leading-[1.6] text-[#223a2f] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]">
+            <div             className="max-w-[88%] rounded-[0.875rem] bg-[#e7ece7] px-4 py-3 text-sm leading-6 text-[#223a2f] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]">
               Hi! Thanks for reaching out. Send us a message and we’ll be happy
               to help.
             </div>
@@ -75,7 +75,7 @@ export default function ContactUs() {
               key={`${index}-${text}`}
             >
               <div className="flex items-end gap-3">
-                <div className="max-w-[88%] whitespace-pre-wrap break-words rounded-[0.875rem] bg-[#f2f4f2] px-4 py-3 text-[0.92rem] leading-[1.6] text-[#223a2f] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]">
+                <div className="max-w-[88%] whitespace-pre-wrap break-words rounded-[0.875rem] bg-[#f2f4f2] px-4 py-3 text-sm leading-6 text-[#223a2f] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]">
                   {text}
                 </div>
 
@@ -100,7 +100,7 @@ export default function ContactUs() {
           placeholder="Text"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          className="flex-1 border-0 bg-transparent px-2 py-2 text-[1.15rem] text-[#173127] placeholder:text-[#77857d] focus:outline-none"
+          className="flex-1 border-0 bg-transparent px-2 py-2 text-sm text-[#173127] placeholder:text-[#77857d] focus:outline-none"
         />
 
         <button

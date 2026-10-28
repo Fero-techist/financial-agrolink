@@ -136,7 +136,7 @@ export default function CreateOpportunity() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl space-y-6 sm:space-y-8">
+    <div className="mx-auto max-w-7xl space-y-6 sm:space-y-8">
       <header className="space-y-3 sm:space-y-4">
         <div className="flex items-center gap-4">
           {step === 1 ? (

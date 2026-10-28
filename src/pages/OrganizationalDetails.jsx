@@ -34,10 +34,10 @@ function ProfileCard({ profile }) {
           className="h-20 w-20 rounded-full object-cover ring-4 ring-[#edf4ec] sm:h-24 sm:w-24"
         />
         <div className="min-w-0">
-          <h2 className="text-xl font-semibold tracking-tight text-[#132f23] sm:text-2xl">
+          <h2 className="text-lg font-semibold tracking-tight text-[#132f23] sm:text-xl">
             {profile.name}
           </h2>
-          <p className="mt-1 text-sm font-semibold text-[#17613b] sm:text-base">
+          <p className="mt-1 text-sm font-semibold text-[#17613b]">
             {profile.role}
           </p>
           <p className="mt-1 text-sm text-[#718078]">{profile.experience}</p>
@@ -56,7 +56,7 @@ function ProfileCard({ profile }) {
         </p>
       </div>
 
-      <p className="mt-6 text-base leading-7 text-[#1d3428] sm:text-lg sm:leading-8">
+      <p className="mt-6 text-sm leading-6 text-[#1d3428]">
         {profile.summary}
       </p>
     </section>
@@ -106,13 +106,13 @@ export default function OrganizationalDetails() {
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#829188]">
               Profile
             </p>
-            <h1 className="mt-1 text-xl font-semibold tracking-tight text-[#07512f] sm:text-2xl">
+            <h1 className="mt-1 text-lg font-semibold tracking-tight text-[#07512f] sm:text-xl">
               Company Details
             </h1>
           </div>
         </div>
         <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-md text-sm leading-6 text-[#7b8a81] sm:text-base sm:leading-7">
+          <p className="max-w-md text-sm leading-6 text-[#7b8a81]">
             Keep your expertise and professional profile up to date.
           </p>
           {!isEditing ? (
@@ -242,11 +242,11 @@ export default function OrganizationalDetails() {
           <section aria-labelledby="about-heading">
             <h2
               id="about-heading"
-              className="mb-3 text-xl font-semibold tracking-tight text-[#19382a] sm:text-2xl"
+              className="mb-3 text-lg font-semibold tracking-tight text-[#19382a]"
             >
               About
             </h2>
-            <p className="rounded-[12px] border border-[#e7eee6] bg-white px-5 py-6 text-base leading-7 text-[#24392e] shadow-[0_4px_9px_rgba(20,55,35,0.026)] sm:px-8 sm:py-8 sm:text-lg sm:leading-8">
+            <p className="rounded-[12px] border border-[#e7eee6] bg-white px-5 py-6 text-sm leading-6 text-[#24392e] shadow-[0_4px_9px_rgba(20,55,35,0.026)] sm:px-8 sm:py-8">
               {profile.about}
             </p>
           </section>
