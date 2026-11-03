@@ -20,6 +20,7 @@ import {
   DEFAULT_SETTINGS_PREFERENCES,
   getSettingsPreferences,
 } from "../utils/settingsPreferences";
+import SettingsImg from "../assets/settingsImg.svg";
 import ActionConfirmationModal from "../components/shared/ActionConfirmationModal";
 
 const accountSettings = [
@@ -219,7 +220,7 @@ export default function Settings() {
         <div className="relative">
           <div className="h-32 w-32 overflow-hidden rounded-full border-[4px] border-[#0b5b43] bg-[#dfe9e0] shadow-[0_7px_10px_rgba(17,45,29,0.078)]">
             <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80"
+              src={SettingsImg}
               alt="Samuel Okonjo"
               className="h-full w-full object-cover"
             />

@@ -1,5 +1,5 @@
 import { Search, Bell } from "lucide-react";
-
+import Navimg from "../../assets/navimg.svg";
 export default function Topbar() {
   return (
     <header className="sticky top-0 z-30 hidden h-[76px] items-center justify-between border-b border-[#e8eee7] bg-white/80 px-6 backdrop-blur-xl md:flex lg:px-10">
@@ -31,7 +31,11 @@ export default function Topbar() {
           role="img"
           className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#dce9df] to-[#cfe1d7] text-sm font-bold text-[#07512f] ring-2 ring-white shadow-[0_4px_9px_rgba(17,45,29,0.052)]"
         >
-          A
+          <img
+            src={Navimg}
+            alt="Profile"
+            className="h-full w-full rounded-full object-cover"
+          />
         </div>
       </div>
     </header>
