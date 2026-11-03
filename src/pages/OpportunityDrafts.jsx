@@ -34,10 +34,11 @@ function DraftCard({ draft }) {
         ]
       : [];
   const details = [...eligibleItems, ...repaymentItems].slice(0, 4);
-  const savedDate = draft.savedAt
-    ? formatDate(draft.savedAt.slice(0, 10))
-    : "";
-  const applicationWindow = [formatDate(draft.opensAt), formatDate(draft.closesAt)]
+  const savedDate = draft.savedAt ? formatDate(draft.savedAt.slice(0, 10)) : "";
+  const applicationWindow = [
+    formatDate(draft.opensAt),
+    formatDate(draft.closesAt),
+  ]
     .filter(Boolean)
     .join(" – ");
   const dateText =
@@ -53,7 +54,11 @@ function DraftCard({ draft }) {
 
       <div className="flex items-center gap-3">
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eef4ea] text-[#287245]">
-          <Landmark aria-hidden="true" size={24} strokeWidth={1.8} />
+          <Landmark
+            aria-hidden="true"
+            size={24}
+            strokeWidth={1.8}
+          />
         </span>
         <div className="min-w-0">
           <h2 className="text-sm font-semibold text-[#10291c] sm:text-base">
@@ -138,13 +143,16 @@ export default function OpportunityDrafts() {
   const { drafts, error } = draftState;
 
   return (
-    <div className="mx-auto max-w-5xl space-y-7 sm:space-y-8">
+    <div className="mx-auto max-w-7xl space-y-7 sm:space-y-8">
       <Link
         to="/programs"
         aria-label="Back to programs"
         className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#10291c] shadow-sm transition hover:bg-[#eef4ea] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07512f]"
       >
-        <ArrowLeft aria-hidden="true" size={23} />
+        <ArrowLeft
+          aria-hidden="true"
+          size={23}
+        />
       </Link>
 
       <header className="space-y-2">
@@ -160,7 +168,10 @@ export default function OpportunityDrafts() {
       </header>
 
       {error && (
-        <p role="alert" className="rounded-xl bg-red-50 p-4 text-sm text-red-800">
+        <p
+          role="alert"
+          className="rounded-xl bg-red-50 p-4 text-sm text-red-800"
+        >
           {error}
         </p>
       )}
@@ -171,8 +182,8 @@ export default function OpportunityDrafts() {
             No saved drafts yet
           </h2>
           <p className="mt-2 text-sm leading-6 text-[#718078]">
-            Save an opportunity while creating it and you can continue from
-            here later.
+            Save an opportunity while creating it and you can continue from here
+            later.
           </p>
           <Link
             to="/programs/create"
@@ -189,7 +200,10 @@ export default function OpportunityDrafts() {
           className="grid items-stretch gap-5 lg:grid-cols-2 xl:gap-6"
         >
           {drafts.map((draft) => (
-            <DraftCard key={draft.id} draft={draft} />
+            <DraftCard
+              key={draft.id}
+              draft={draft}
+            />
           ))}
         </section>
       )}
